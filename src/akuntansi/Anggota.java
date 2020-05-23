@@ -23,8 +23,8 @@ public class Anggota {
             
             Class.forName("com.mysql.jdbc.Driver");  
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
-            String sql = "insert into mitra (no,nama_mb,nama_pemilik,tahun,sektor_usaha,alamat_usaha,desa_kelurahan,kecamatan,wilayah,no_spk,tgl_spk,pinj_tahap,bentuk_jaminan,jenis_jaminan)" + 
-                         "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into mitra (no,nama_mb,nama_pemilik,kode,tahun,sektor_usaha,alamat_usaha,desa_kelurahan,kecamatan,wilayah,no_spk,tgl_spk,pinj_tahap,bentuk_jaminan,jenis_jaminan)" + 
+                         "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst = con.prepareStatement(sql);
     }
     
@@ -46,7 +46,7 @@ public class Anggota {
             
             Class.forName("com.mysql.jdbc.Driver");  
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
-            String sql = "UPDATE mitra SET no = ?, nama_mb = ?, nama_pemilik = ?, tahun = ?, sektor_usaha = ?, alamat_usaha = ?, desa_kelurahan = ?, kecamatan = ?, wilayah = ?, no_spk = ?, tgl_spk = ?, pinj_tahap = ?, bentuk_jaminan = ?, jenis_jaminan = ? where kode = ?" ;
+            String sql = "UPDATE mitra SET no = ?, nama_mb = ?, nama_pemilik = ?, kode = ?, tahun = ?, sektor_usaha = ?, alamat_usaha = ?, desa_kelurahan = ?, kecamatan = ?, wilayah = ?, no_spk = ?, tgl_spk = ?, pinj_tahap = ?, bentuk_jaminan = ?, jenis_jaminan = ? where kode = ?" ;
             pst = con.prepareStatement(sql);
     }
 }
