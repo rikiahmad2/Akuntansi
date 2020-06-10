@@ -27,4 +27,19 @@ public class Pengguna {
             pst = con.prepareStatement(sql);
     }
     
+     public void tambah() throws SQLException, ClassNotFoundException{
+            
+            Class.forName("com.mysql.jdbc.Driver");  
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
+            String sql = "insert into user (username,password,level)" + 
+                         "values(?,?,?)";
+            pst = con.prepareStatement(sql);
+    }
+     
+     public void delete() throws SQLException, ClassNotFoundException{
+            Class.forName("com.mysql.jdbc.Driver");  
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
+            String sql = "delete from user where kd_user = ?";
+            pst = con.prepareStatement(sql);
+    }
 }
