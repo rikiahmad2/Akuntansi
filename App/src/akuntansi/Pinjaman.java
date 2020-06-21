@@ -21,8 +21,8 @@ public class Pinjaman {
             
             Class.forName("com.mysql.jdbc.Driver");  
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
-            String sql = "insert into pinjaman (kode_mitra,jumlah_pinjaman,tgl_pinjaman,tgl_tempo,lama_pinjaman,angsuran_pokok,non_bunga,total_pinjaman,bunga,bunga_bln)" + 
-                         "values(?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into pinjaman (kode_mitra,jumlah_pinjaman,tgl_pinjaman,tgl_tempo,lama_pinjaman,angsuran_pokok,non_bunga,total_pinjaman,bunga,bunga_bln,cr)" + 
+                         "values(?,?,?,?,?,?,?,?,?,?,?)";
             pst = con.prepareStatement(sql);
     }
      public void delete() throws SQLException, ClassNotFoundException{
@@ -42,7 +42,7 @@ public class Pinjaman {
             
             Class.forName("com.mysql.jdbc.Driver");  
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
-            String sql = "UPDATE pinjaman SET jumlah_pinjaman = ?, tgl_pinjaman = ?, tgl_tempo = ?, lama_pinjaman = ?, bunga = ?,non_bunga = ?,total_pinjaman= ?,angsuran_pokok = ?,bunga_bln = ? Where kode_pinjaman = ?" ;
+            String sql = "UPDATE pinjaman SET jumlah_pinjaman = ?, tgl_pinjaman = ?, tgl_tempo = ?, lama_pinjaman = ?, bunga = ?,non_bunga = ?,total_pinjaman= ?,angsuran_pokok = ?,bunga_bln = ?,cr=? Where kode_pinjaman = ?" ;
             pst = con.prepareStatement(sql);
     }
      
@@ -50,7 +50,15 @@ public class Pinjaman {
             
             Class.forName("com.mysql.jdbc.Driver");  
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
-            String sql = "UPDATE pinjaman SET total_pinjaman= ? Where kode_pinjaman = ?" ;
+            String sql = "UPDATE pinjaman SET total_pinjaman= ?, cr = ? Where kode_pinjaman = ?" ;
+            pst = con.prepareStatement(sql);
+    }
+     
+     public void sum() throws SQLException, ClassNotFoundException{
+            
+            Class.forName("com.mysql.jdbc.Driver");  
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
+            String sql = "SELECT SUM(cr) AS total FROM pinjaman" ;
             pst = con.prepareStatement(sql);
     }
 }

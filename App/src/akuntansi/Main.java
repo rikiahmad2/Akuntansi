@@ -153,10 +153,14 @@ public class Main extends javax.swing.JFrame {
         label67 = new java.awt.Label();
         label68 = new java.awt.Label();
         jDialog4 = new javax.swing.JDialog();
-        jTextField29 = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
         label69 = new java.awt.Label();
         jButton41 = new javax.swing.JButton();
+        label78 = new java.awt.Label();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
         mainPanel = new javax.swing.JPanel();
         pnlCard1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -656,9 +660,7 @@ public class Main extends javax.swing.JFrame {
 
         jDialog4.setMinimumSize(new java.awt.Dimension(350, 250));
 
-        jTextField29.setEditable(false);
-
-        jButton11.setText("Select");
+        jButton11.setText("Cetak");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
@@ -667,46 +669,89 @@ public class Main extends javax.swing.JFrame {
 
         label69.setAlignment(java.awt.Label.CENTER);
         label69.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        label69.setText("BUKA TRANSAKSI");
+        label69.setText("Jurnal Pengakuan Piutang");
 
-        jButton41.setText("Open");
+        jButton41.setText("Keluar");
         jButton41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton41ActionPerformed(evt);
             }
         });
 
+        label78.setAlignment(java.awt.Label.CENTER);
+        label78.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        label78.setText("PT.Bio Farma Persero");
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Dr.Piutang Mitra Binaan", "Cr.KAS"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane9.setViewportView(jTable6);
+
         javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
         jDialog4.getContentPane().setLayout(jDialog4Layout);
         jDialog4Layout.setHorizontalGroup(
             jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog4Layout.createSequentialGroup()
-                .addGroup(jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label69, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jDialog4Layout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(37, 37, 37)
-                            .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jDialog4Layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGroup(jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialog4Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addGroup(jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label78, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label69, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jDialog4Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialog4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jDialog4Layout.setVerticalGroup(
             jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialog4Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(18, 18, 18)
                 .addComponent(label69, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label78, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addGroup(jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton41, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1366, 768));
@@ -2102,7 +2147,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jButton23)
                                 .addGap(196, 196, 196)
                                 .addComponent(jButton25)))))
-                .addContainerGap(1194, Short.MAX_VALUE))
+                .addContainerGap(576, Short.MAX_VALUE))
         );
         pnlCard6Layout.setVerticalGroup(
             pnlCard6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3029,6 +3074,7 @@ public class Main extends javax.swing.JFrame {
             query.pst.setDouble      (8,total_pinjaman);
             query.pst.setDouble      (9,bunga);
             query.pst.setDouble      (10,angsuran_pokok-nonbunga);
+            query.pst.setInt      (11,jumlah_pinjaman);
             query.pst.executeUpdate();
             
             query.con.close();
@@ -3159,7 +3205,8 @@ public class Main extends javax.swing.JFrame {
             query.pst.setFloat      (7,total_pinjaman);
             query.pst.setFloat      (8,angsuran_pokok);
             query.pst.setFloat      (9,angsuran_pokok-nonbunga);
-            query.pst.setInt        (10,kode_pinjaman);
+            query.pst.setFloat      (10,jumlah_pinjaman);
+            query.pst.setInt        (11,kode_pinjaman);
             query.pst.executeUpdate();
             
             query.con.close();
@@ -3320,6 +3367,10 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
            int kode_pinjaman = Integer.parseInt(jTextField8.getText());
+           int non_bunga = Integer.parseInt(jTextField33.getText());
+           int ang_ke = Integer.parseInt(jTextField30.getText());
+           int jumlah_pinjaman = Integer.parseInt(jTextField25.getText());
+           int cr = jumlah_pinjaman-non_bunga*ang_ke;
            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
            String dob = sdf.format(jDateChooser4.getDate());
            LocalDateTime from = LocalDateTime.ofInstant(jDateChooser3.getDate().toInstant(), ZoneId.systemDefault());
@@ -3346,7 +3397,8 @@ public class Main extends javax.swing.JFrame {
             coba.edit_hutang();
             
             coba.pst.setString       (1,jTextField35.getText());
-            coba.pst.setInt          (2,kode_pinjaman);
+            coba.pst.setString       (2,String.valueOf(cr));
+            coba.pst.setInt          (3,kode_pinjaman);
             coba.pst.executeUpdate();
             
             jOptionPane1.showMessageDialog(null,"Data Ditambah !");
@@ -3606,49 +3658,76 @@ public class Main extends javax.swing.JFrame {
         cardLayout.show(mainPanel,"pnlCard4");
     }//GEN-LAST:event_jButton40ActionPerformed
 
+    //Keluar Jdialog laporan Keuangan
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-        // TODO add your handling code here:
-         //open
-        filepath = jTextField29.getText();
-        try{
-            File pdfFile = new File(filepath);
-            if(pdfFile.exists()){
-                if(Desktop.isDesktopSupported()){
-                    Desktop.getDesktop().open(pdfFile);
-                }
-                else{
-                    jOptionPane1.showMessageDialog(rootPane,"Desktop not supported!!");
-                }
-            }
-            else{
-                jOptionPane1.showMessageDialog(rootPane,"File is not exist !!");
-            }
-        }
-        catch(Exception E){
-            
-        }
+        jDialog4.dispose();
     }//GEN-LAST:event_jButton41ActionPerformed
 
+    //Laporan Keungan JDIALOG(tombol CETAK)
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-        JFileChooser jfc = new JFileChooser();
-        jfc.showOpenDialog(this);
-
-        try{
-            File f = jfc.getSelectedFile();
-            filepath = f.getAbsolutePath();
-            filepath = filepath.replace('\\','/');
-            jTextField29.setText(filepath);
-        }
-        catch(Exception e){
-
+      FileOutputStream excelFOU = null;
+        BufferedOutputStream excelBOU = null;
+        XSSFWorkbook excelJTableExporter = null;
+        
+        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+        
+        JFileChooser excelFileChooser = new JFileChooser();
+        //dialog title
+        excelFileChooser.setDialogTitle("Save AS");
+        //filter extensi
+        FileNameExtensionFilter fnef = new FileNameExtensionFilter("EXCEL FILES","xls","xlsx","xlsm");
+        excelFileChooser.setFileFilter(fnef);
+        int excelChooser = excelFileChooser.showSaveDialog(null);
+        
+        //check if save button click
+        if(excelChooser == JFileChooser.APPROVE_OPTION){
+            
+            
+            try {
+                excelJTableExporter = new XSSFWorkbook();
+                XSSFSheet excelSheet = excelJTableExporter.createSheet("Jtable Shee");
+                //loop to get jtable rows and columns
+                for(int i = 0; i<model.getRowCount(); i++){
+                    XSSFRow excelRow = excelSheet.createRow(i);
+                    for(int j=0; j<model.getColumnCount(); j++){
+                        XSSFCell excelCell = excelRow.createCell(j);
+                        
+                        excelCell.setCellValue(model.getValueAt(i,j).toString());
+                    }
+                }   //appen xlsx file extensions to selected file to create unique files names
+                excelFOU = new FileOutputStream(excelFileChooser.getSelectedFile()+ ".xlsx");
+                excelBOU = new BufferedOutputStream(excelFOU);
+                excelJTableExporter.write(excelBOU);
+                jOptionPane1.showMessageDialog(null,"Export Succes !!");
+            } catch (FileNotFoundException ex) {
+                ex.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if(excelBOU != null){
+                        excelBOU.close();
+                    }
+                    if(excelFOU != null){
+                        excelFOU.close();
+                    }
+                    if(excelJTableExporter != null){
+                        excelJTableExporter.close();
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    //menu laporan keuangan
     private void laporanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laporanBtnActionPerformed
         // TODO add your handling code here:
         jDialog4.setVisible(true);
         setLocationRelativeTo(null);
+        
+        refresh_tableCR();
     }//GEN-LAST:event_laporanBtnActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
@@ -3820,6 +3899,27 @@ public class Main extends javax.swing.JFrame {
         }
     }
     
+    public void refresh_tableCR(){
+     //refresh table
+        try{
+                Class.forName("com.mysql.jdbc.Driver");  
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/akuntansi","root","");
+                PreparedStatement ps = con.prepareStatement("SELECT SUM(cr) AS total FROM pinjaman");
+                ResultSet rs = ps.executeQuery();
+                DefaultTableModel tm = (DefaultTableModel)jTable6.getModel();
+                tm.setRowCount(0);
+
+               while(rs.next()){
+                    Object o[] = {rs.getInt("total"),rs.getInt("total")};
+                    tm.addRow(o);
+                }
+                con.close();
+        }
+        catch(Exception e){
+
+        }
+    }
+    
     
     public void table_cari(){
      //refresh table
@@ -3963,10 +4063,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -3988,7 +4092,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField26;
     private javax.swing.JTextField jTextField27;
     private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
@@ -4083,6 +4186,7 @@ public class Main extends javax.swing.JFrame {
     private java.awt.Label label75;
     private java.awt.Label label76;
     private java.awt.Label label77;
+    private java.awt.Label label78;
     private java.awt.Label label8;
     private java.awt.Label label9;
     private javax.swing.JButton laporanBtn;

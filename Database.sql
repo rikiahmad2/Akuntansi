@@ -27,13 +27,18 @@ CREATE TABLE IF NOT EXISTS `angsuran` (
   PRIMARY KEY (`kode_bayar`),
   KEY `FK_angsuran_pinjaman` (`kode_pinjaman`),
   CONSTRAINT `FK_angsuran_pinjaman` FOREIGN KEY (`kode_pinjaman`) REFERENCES `pinjaman` (`kode_pinjaman`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
--- Dumping data for table akuntansi.angsuran: ~1 rows (approximately)
+-- Dumping data for table akuntansi.angsuran: ~5 rows (approximately)
 /*!40000 ALTER TABLE `angsuran` DISABLE KEYS */;
 INSERT INTO `angsuran` (`kode_bayar`, `kode_pinjaman`, `tanggal_bayar`, `angsuran_ke`, `kualitas`, `hari_ke`) VALUES
 	(38, 7, '2020-06-06', 1, 'Pinjaman Lancar', 12),
-	(39, 7, '2020-06-04', 2, 'Pinjaman Lancar', 1);
+	(39, 7, '2020-06-04', 2, 'Pinjaman Lancar', 1),
+	(40, 7, '2020-06-06', 3, 'Pinjaman Lancar', 3),
+	(41, 18, '2020-06-05', 1, '', 0),
+	(43, 18, '2020-06-06', 2, 'Pinjaman Lancar', 1),
+	(44, 7, '2020-06-04', 4, 'Pinjaman Lancar', 1),
+	(45, 20, '2020-06-05', 1, 'Pinjaman Lancar', 1);
 /*!40000 ALTER TABLE `angsuran` ENABLE KEYS */;
 
 -- Dumping structure for table akuntansi.mitra
@@ -77,16 +82,18 @@ CREATE TABLE IF NOT EXISTS `pinjaman` (
   `total_pinjaman` int(11) DEFAULT NULL,
   `bunga` float DEFAULT NULL,
   `bunga_bln` int(11) DEFAULT NULL,
+  `cr` int(11) DEFAULT NULL,
   PRIMARY KEY (`kode_pinjaman`),
   KEY `FK_pinjaman_mitra` (`kode_mitra`),
   CONSTRAINT `FK_pinjaman_mitra` FOREIGN KEY (`kode_mitra`) REFERENCES `mitra` (`kode`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
--- Dumping data for table akuntansi.pinjaman: ~0 rows (approximately)
+-- Dumping data for table akuntansi.pinjaman: ~3 rows (approximately)
 /*!40000 ALTER TABLE `pinjaman` DISABLE KEYS */;
-INSERT INTO `pinjaman` (`kode_pinjaman`, `kode_mitra`, `jumlah_pinjaman`, `tgl_pinjaman`, `tgl_tempo`, `lama_pinjaman`, `angsuran_pokok`, `non_bunga`, `total_pinjaman`, `bunga`, `bunga_bln`) VALUES
-	(7, 6, 600000, '2020-06-03', '2020-06-13', 15, 64000, 40000, 896000, 4, 24000),
-	(18, 33333, 500000, '2020-06-05', '2020-06-20', 12, 56666, 41666, 680000, 3, 15000);
+INSERT INTO `pinjaman` (`kode_pinjaman`, `kode_mitra`, `jumlah_pinjaman`, `tgl_pinjaman`, `tgl_tempo`, `lama_pinjaman`, `angsuran_pokok`, `non_bunga`, `total_pinjaman`, `bunga`, `bunga_bln`, `cr`) VALUES
+	(7, 6, 600000, '2020-06-03', '2020-06-13', 15, 64000, 40000, 550400, 4, 24000, 440000),
+	(18, 33333, 500000, '2020-06-05', '2020-06-20', 16, 46250, 31250, 647500, 3, 15000, 437500),
+	(20, 6, 1000000, '2020-06-04', '2020-06-20', 12, 103333, 83333, 1136667, 2, 20000, 916667);
 /*!40000 ALTER TABLE `pinjaman` ENABLE KEYS */;
 
 -- Dumping structure for table akuntansi.user
@@ -96,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(50) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
   PRIMARY KEY (`kd_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table akuntansi.user: ~2 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
