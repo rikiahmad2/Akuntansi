@@ -875,7 +875,7 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(50, 224, 196));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(57, 62, 70), 3));
 
-        profilBtn.setIcon(new javax.swing.ImageIcon("D:\\Assets\\Icons\\user.png")); // NOI18N
+        profilBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/user.png"))); // NOI18N
         profilBtn.setBorder(null);
         profilBtn.setOpaque(false);
         profilBtn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -901,7 +901,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        transasksiBtn.setIcon(new javax.swing.ImageIcon("D:\\Assets\\Icons\\Transaksi.png")); // NOI18N
+        transasksiBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Transaksi.png"))); // NOI18N
         transasksiBtn.setOpaque(false);
         transasksiBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
