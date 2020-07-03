@@ -22,6 +22,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -690,7 +691,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Dr.Piutang Mitra Binaan", "Cr.KAS"
+                "Dr.Kas", "Cr.Piutang Perusahaan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3080,9 +3081,11 @@ public class Main extends javax.swing.JFrame {
             query.con.close();
             jOptionPane1.showMessageDialog(null,"Data Ditambah !");
             refresh_tablePinjaman();
-            jTextField3.setText(String.valueOf(total_pinjaman));
-            jTextField9.setText(String.valueOf(nonbunga));
-            jTextField10.setText(String.valueOf(angsuran_pokok));
+            DecimalFormat df = new DecimalFormat("#");
+            df.setMaximumFractionDigits(10);
+            jTextField3.setText(String.valueOf(df.format(total_pinjaman)));
+            jTextField9.setText(String.valueOf(df.format(nonbunga)));
+            jTextField10.setText(String.valueOf(df.format(angsuran_pokok)));
             
         }
         catch(Exception e){
@@ -3457,10 +3460,11 @@ public class Main extends javax.swing.JFrame {
            double total_pinjaman = bunga*lama_pinjaman/100*jumlah_pinjaman + jumlah_pinjaman;
            double nonbunga = angsuran_pokok-bunga*lama_pinjaman/100*jumlah_pinjaman/lama_pinjaman;
            
-           
-           jTextField3.setText(String.valueOf(total_pinjaman));
-            jTextField9.setText(String.valueOf(nonbunga));
-            jTextField10.setText(String.valueOf(angsuran_pokok));
+           DecimalFormat df = new DecimalFormat("#");
+           df.setMaximumFractionDigits(10);
+           jTextField3.setText(String.valueOf(df.format(total_pinjaman)));
+            jTextField9.setText(String.valueOf(df.format(nonbunga)));
+            jTextField10.setText(String.valueOf(df.format(angsuran_pokok)));
            
     }//GEN-LAST:event_jTextField2KeyReleased
 
